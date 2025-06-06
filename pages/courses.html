@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Courses / TutorMatch</title>
+    <link href="/css/courses.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="/images/icon.png" />
+    <script type="module" src="/js/courses.js"></script>
+  </head>
+
+  <body>
+    <!-- This is the top of the page, where the main navigation bar sits -->
+    <header id="top">
+      <nav id="nav">
+          <ul class="ul">
+              <div class="nav-center">
+                  <li><a href="/index.html"><img src="/images/icon.png" alt="logo" class="logo"></a></li>
+              </div>
+          </ul>
+          <ul class="ul">
+              <div class="nav-center">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/courses.html"><strong>Courses</strong></a></li>
+                <li><a href="/pages/tutor.html">Tutors</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/hub.html">Learning Hub</a></li>
+                <li><a href="/pages/contact.html">Contact Us</a></li>
+                <button class="btn" id="logout-btn">Logout</button>
+                <button class="btn" id="login-btn">Login</button>
+              </div>
+          </ul>
+      </nav>
+    </header>
+
+    <!-- This is the main section of the Courses page -->
+    <main>
+      <!-- Big heading area with a short welcome message -->
+      <section id="user-name-container">
+        <h2 id="welcome">Loading...</h2>
+        <p id="context">Loading...</p>
+      </section>
+
+      <!-- All the courses are displayed in a grid below -->
+      <div class="course-grid">
+
+        <!-- Each subject has its own box with name, price, and a button -->
+        <section class="course-hero" style="background-image: url('/images/math.jpg');">
+          <div class="course" data-course-id="1">
+            <h2>Maths</h2>
+            <p>Price: £10/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/english-language.jpg');">
+          <div class="course" data-course-id="2">
+            <h2>English Language</h2>
+            <p>Price: £12/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/english-literature.jpg');">
+          <div class="course" data-course-id="3">
+            <h2>English Literature</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/physics.jpg');">
+          <div class="course" data-course-id="4">
+            <h2>Physics</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/biology.jpg');">
+          <div class="course" data-course-id="5">
+            <h2>Biology</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/chemistry.jpg');">
+          <div class="course" data-course-id="6">
+            <h2>Chemistry</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/computer-science.jpg');">
+          <div class="course" data-course-id="7">
+            <h2>Computer Science</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/geography.jpg');">
+          <div class="course" data-course-id="8">
+            <h2>Geography</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/history.jpg');">
+          <div class="course" data-course-id="9">
+            <h2>History</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/citizenship.jpg');">
+          <div class="course" data-course-id="10">
+            <h2>Citizenship Studies</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/psychology.jpg');">
+          <div class="course" data-course-id="11">
+            <h2>Psychology</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+        <section class="course-hero" style="background-image: url('/images/business.jpg');">
+          <div class="course" data-course-id="12">
+            <h2>Business</h2>
+            <p>Price: £11/hr</p>
+            <button class="buy-btn">Add to Courses</button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer includes ways to contact and follow the tutoring service -->
+    <footer>
+      <div class="footer-section social-media">
+          <h2>Find Us</h2>
+          <a href="https://facebook.com/" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+          <a href="https://twitter.com/" target="_blank"><img src="/images/twitter.png" alt="Twitter"></a>
+          <a href="https://instagram.com/" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+      </div>
+
+      <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: support@TutorMatch.com</p>
+          <p>Phone: 0208 456 1234</p>
+      </div>
+
+      <p><strong>&copy; 2025 TutorMatch. All Rights Reserved.</strong></p>
+    </footer> 
+
+  </body>
+</html>
+

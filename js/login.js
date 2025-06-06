@@ -1,0 +1,77 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+//https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyAYECrfhI2bm0esgSGAJkUlvhCHBZmYEXo",
+    authDomain: "tutormatch-7e043.firebaseapp.com",
+    projectId: "tutormatch-7e043",
+    storageBucket: "tutormatch-7e043.firebasestorage.app",
+    messagingSenderId: "694680606532",
+    appId: "1:694680606532:web:1a1e782be899c55da76911"
+};
+  
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+
+const submit = document.getElementById('submit');
+submit.addEventListener("click", function (event) {
+    event.preventDefault()
+    //alert("works")
+
+    //get inputs
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+        if (user.emailVerified) {
+            window.location.href = "/index.html";
+          } else {
+            alert("Please verify your email before logging in.");
+          }
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+});
+
+// Get the "Forgot Password" link
+const forgotPasswordLink = document.getElementById("forgot-password-link");
+
+// Handle the password reset request
+forgotPasswordLink.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  // Prompt the user for their email
+  const email = prompt("Please enter your email address:");
+
+  if (email) {
+    // Send the password reset email
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Inform the user that the email has been sent
+        alert("Password reset email sent! Please check your inbox.");
+      })
+      .catch((error) => {
+        // Handle errors, e.g. invalid email
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        
+        if (errorCode === 'auth/invalid-email') {
+          alert("The email address is invalid. Please check your email.");
+        } else if (errorCode === 'auth/user-not-found') {
+          alert("No user found with this email address.");
+        } else {
+          alert("An error occurred: " + errorMessage);
+        }
+      });
+  } else {
+    alert("Email is required.");
+  }
+});

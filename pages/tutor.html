@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/x-icon" href='/images/icon.png'>
+  <title>Find a Tutor / TutorMatch</title>
+  <link rel="stylesheet" href="/css/tutor.css">
+</head>
+<body>
+  <header id="top">
+    <nav id="nav">
+        <ul class="ul">
+            
+
+            <div class="nav-center">
+                <li><a href="/index.html"><img src="/images/icon.png" alt="logo" class="logo"></a></li>
+            </div>
+        </ul>
+        <ul class="ul">
+            <div class="nav-center">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/courses.html">Courses</a></li>
+              <li><a href="/pages/tutor.html"><strong>Tutors</strong></a></li>
+              <li><a href="/pages/about.html">About</a></li>
+              <li><a href="/pages/hub.html">Learning Hub</a></li>
+              <li><a href="/pages/contact.html">Contact Us</a></li>
+              <button class="btn" id="logout-btn">Logout</button>
+              <button class="btn" id="login-btn">Login</button>
+            </div>
+        </ul>
+    </nav>
+</header>
+  <h1>Available Tutors</h1>
+  <div id="map" style="height: 400px; margin: 2rem 0;"></div>
+  
+  <div class="filter-bar">
+  <label for="subject-filter">Filter by Subject:</label>
+  <select id="subject-filter" onchange="filterTutors()">
+  <option value="all">All Subjects</option>
+  <option value="GCSE English">GCSE English</option>
+  <option value="GCSE Maths">GCSE Maths</option>
+  <option value="A-Level Maths">A-Level Maths</option>
+  <option value="A-Level English">A-Level English</option>
+</select>
+<button class="filter-btn" onclick="findNearbyTutors()">Find Tutors Near Me</button>
+<a id="get-directions" class="black-btn" href="https://www.google.com/maps/dir/?api=1&origin=YOUR_LAT,YOUR_LNG&destination=TUTOR_LAT,TUTOR_LNG" onclick="generateDirectionsLink()">Get Directions</a>
+  </div>
+
+  <div id="tutor-list">
+    <div class="tutor-card" data-tags="GCSE Maths">
+      <img src="/images/tutors/tutor1.png" alt="Jane Smith" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Rodrick Heffley</h3>
+        <p><strong>Subject:</strong> Maths</p>
+        <p>GCSE Maths Specialist</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+  
+    <div class="tutor-card" data-tags="A-Level Maths">
+      <img src="/images/tutors/tutor2.png" alt="Mark Johnson" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Mark Johnson</h3>
+        <p><strong>Subject:</strong> Maths</p>
+        <p>A-Level Maths Tutor</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+  
+    <div class="tutor-card" data-tags="GCSE English A-Level English">
+      <img src="/images/tutors/tutor3.png" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Layla Patel</h3>
+        <p><strong>Subject:</strong> English</p>
+        <p>GCSE English & A-Level English Tutor</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="A-Level Maths">
+      <img src="/images/tutors/tutor4.jpeg" alt="Walter Hartwell White" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Walter Hartwell White</h3>
+        <p><strong>Subject:</strong> Maths</p>
+        <p>A-Level Further Maths Tutor</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="A-Level Maths">
+      <img src="/images/tutors/tutor5.JPG" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Dr. Ivo Robotnick </h3>
+        <p><strong>Subject:</strong> Maths</p>
+        <p>A-Level Further Maths Tutor</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="GCSE English">
+      <img src="/images/tutors/tutor6.JPG" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Aban Stone</h3>
+        <p><strong>Subject:</strong> English</p>
+        <p>GCSE English</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+    
+    <div class="tutor-card" data-tags="GCSE Maths">
+      <img src="/images/tutors/tutor8.jpeg" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Sarah Ahmady</h3>
+        <p><strong>Subject:</strong> Maths</p>
+        <p>GCSE Maths</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="A-Level English">
+      <img src="/images/tutors/tutor7.jpg" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Joyya Khan</h3>
+        <p><strong>Subject:</strong> English</p>
+        <p>A-level English</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="GCSE English">
+      <img src="/images/tutors/tutor9.jpeg" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Liz Truss</h3>
+        <p><strong>Subject:</strong> English</p>
+        <p>GCSE English</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="A-Level English">
+      <img src="/images/tutors/tutor10.jpeg" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Dr. Gregory House</h3>
+        <p><strong>Subject:</strong> English</p>
+        <p>A-level English Lit / lang</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+    
+    <div class="tutor-card" data-tags="A-Level English">
+      <img src="/images/tutors/tutor11.jpg" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Musabeha Cheema</h3>
+        <p><strong>Subject:</strong> English</p>
+        <p>A-level Englih Language</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+    
+    <div class="tutor-card" data-tags="A-level Maths">
+      <img src="/images/tutors/tutor12.JPG" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Miss Salihah</h3>
+        <p><strong>Subject:</strong> Maths</p>
+        <p>A-level Maths</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="A-level Englih">
+      <img src="/images/tutors/tutor13.JPG" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Miss Naina</h3>
+        <p><strong>Subject:</strong> English</p>
+        <p>A-level English Literature</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="GCSE Maths">
+      <img src="/images/tutors/tutor14.png" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Hwang In-ho</h3>
+        <p><strong>Subject:</strong> Maths</p>
+        <p>GCSE Maths</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+    <div class="tutor-card" data-tags="GCSE Maths">
+      <img src="/images/tutors/tutor15.png" alt="Layla Patel" class="tutor-image">
+      <div class="tutor-info">
+        <h3>Mr. Frontman</h3>
+        <p><strong>Subject:</strong> Maths</p>
+        <p>GCSE Maths</p>
+        <a href="tutor.html">View Profile</a>
+      </div>
+    </div>
+
+
+  </div>
+
+  <footer>
+    <div class="footer-section social-media">
+        <h2>Find Us</h2>
+        <a href="https://facebook.com/" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+        <a href="https://twitter.com/" target="_blank"><img src="/images/twitter.png" alt="Twitter"></a>
+        <a href="https://instagram.com/" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+    </div>
+
+    <div class="footer-section contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@tutormatch.com</p>
+        <p>Phone: 0208 456 1234</p>
+    </div>
+
+    <p>&copy; 2025 TutorMatch. All Rights Reserved.</p>
+  </footer>
+  <script>
+    const tutors = [
+      { name: "Jane Smith", lat: 51.5074, lng: -0.1278 },
+      { name: "Mark Johnson", lat: 52.4862, lng: -1.8904 },
+      { name: "Layla Patel", lat: 53.4808, lng: -2.2426 },
+      { name: "Walter Hartwell White", lat: 51.4545, lng: -2.5879 },
+      { name: "Dr. Ivo Robotnick", lat: 53.8008, lng: -1.5491 },
+      { name: "Aban Stone", lat: 51.7520, lng: -1.2577 },
+      { name: "Sarah Ahmady", lat: 51.3367, lng: 0.4521 },
+      { name: "Joyya Khan", lat: 52.2053, lng: 0.1218 },
+      { name: "Liz Truss", lat: 52.9387, lng: -0.1253 },
+      { name: "Dr. Gregory House", lat: 52.4862, lng: -1.8474 },
+      { name: "Musabeha Cheema", lat: 52.4853, lng: -2.2426 },
+      { name: "Miss Salihah", lat: 51.4423, lng: -1.2826 },
+      { name: "Miss Naina", lat: 52.4853, lng: -1.2256 },
+      { name: "Hwang In-ho", lat: 51.4853, lng: -1.2496 },
+      { name: "Mr. Frontman", lat: 51.4853, lng: -1.2126 }
+
+    ];
+    </script>    
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcF52HcRI-7QiCrkoZSify_8fStIMf4aA&callback=initMap"
+  async
+  defer
+></script>
+
+<script>
+  function getDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = 
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+  
+  function findNearbyTutors() {
+    navigator.geolocation.getCurrentPosition(position => {
+      const userLat = position.coords.latitude;
+      const userLon = position.coords.longitude;
+  
+      // Map of tutor cards and their lat/lngs
+      const tutorCards = document.querySelectorAll('.tutor-card');
+
+      tutorCards.forEach((card, i) => {
+        const tutor = tutorCoords.find(t => t.index === i);
+        if (!tutor) return;
+  
+        const dist = getDistance(userLat, userLon, tutor.lat, tutor.lon);
+        if (dist <= 50) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  }
+  </script>
+  
+<script>
+  function initMap() {
+  const center = { lat: 51.5074, lng: -0.1278 };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 6,
+    center: center,
+  });
+
+  tutors.forEach(tutor => {
+    const marker = new google.maps.Marker({
+      position: { lat: tutor.lat, lng: tutor.lng },
+      map,
+      title: tutor.name,
+    });
+  });
+}
+
+  const tutorCoords = [
+  { index: 0, lat: 51.5074, lon: -0.1278 },   
+  { index: 1, lat: 52.4862, lon: -1.8904 },   // Mark Johnson - Birmingham
+  { index: 2, lat: 53.4808, lon: -2.2426 },   // Layla Patel - Manchester
+  { index: 3, lat: 51.4545, lon: -2.5879 },   // Walter - Bristol
+  { index: 4, lat: 53.8008, lon: -1.5491 },   // Ivo - Leeds
+  { index: 5, lat: 51.7520, lon: -1.2577 },   // Aban - Oxford
+  { index: 6, lat: 51.3367, lon: 0.4521 },    // Sarah - Kent
+  { index: 7, lat: 52.2053, lon: 0.1218 },    // Joyya - Cambridge
+  { index: 8, lat: 52.9387, lon: -0.1253 },   
+  { index: 9, lat: 52.4862, lon: -1.8474 },   
+  { index: 10, lat: 52.4853, lon: -2.2426 },
+  { index: 11, lat: 51.4423, lon: -1.2826 },
+  { index: 12, lat: 52.4853, lon: -1.2256 },
+  { index: 13, lat: 51.4853, lon: -1.2496 },
+  { index: 14, lat: 51.4853, lng: -1.2126 }
+];
+
+
+  tutors.forEach(tutor => {
+    const marker = new google.maps.Marker({
+      position: { lat: tutor.lat, lng: tutor.lng },
+      map,
+      title: tutor.name,
+    });
+  });
+
+</script>
+  
+  <script>
+    function filterTutors() {
+      const selected = document.getElementById('subject-filter').value;
+      const cards = document.querySelectorAll('.tutor-card');
+
+      cards.forEach(card => {
+        const tags = card.dataset.tags;
+        if (selected === 'all' || tags.includes(selected)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+  <script type="module" src="/js/pages.js"></script>
+</body>
+</html>

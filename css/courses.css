@@ -1,0 +1,200 @@
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 100%;
+}
+
+/* Navbar */
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Container for centered items */
+.nav-center {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Align list items */
+li {
+    position: relative; /* Ensures submenu is positioned correctly */
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar links */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+/* Logo styling */
+.logo {
+    height: 200px;
+    width: auto;
+}
+
+.btn {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.buy-btn {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    margin: 0;
+    padding: 0;
+}
+
+.dark-mode {
+    background-color: #111;
+    color: white;
+}
+
+/*LAYOUT FOR THE COURSES SECTION*/
+/* The grid that holds all the course cards */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+/* Each course card with a background image */
+.course-hero {
+    position: relative;
+    height: 250px;
+    background-size: cover;
+    background-position: centre;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    transition: transform 0.3s;
+    color: white;
+    overflow: hidden;
+}
+
+/* A little zoom when you hover over a course card */
+.course:hover {
+    transform: scale(1.02);
+}
+
+/* The dark box at the bottom of each course that holds the text */
+.course {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0 0 20px 20px;
+    text-align: left;
+}
+
+/* Course title inside each card */
+.course h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Price underneath the course title */
+.course p {
+    margin: 5px 0 10px;
+}
+
+/* The "Add to Courses" button inside each card */
+.course .buy-btn {
+    background-color: burlywood;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn {
+    background-color: burlywood;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Slight colour change when hovering over the course button */
+.course .buy-btn:hover {
+    background-color: #caa06a;
+}
+
+.dark-mode {
+    background-color: #111;
+    color: white;
+}
+
+/* footer */
+footer {
+    background-color: burlywood;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section img {
+    width: 50px;
+    height: 50px; 
+    margin: 10px;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+.footer-section img:hover {
+    opacity: 0.7;
+    transform: scale(1.1); 
+}

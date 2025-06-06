@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Login / TutorMatch</title>
+  <link rel="icon" type="image/x-icon" href="/images/icon.png">
+  <link href="/css/signup.css" rel="stylesheet" type="text/css" />
+  <script type="module" src="/js/login.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="/index.html">
+                    <img src="/images/icon.png" class="logo">
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="box">
+            <h2>Login</h2>
+            <form>
+                <label for="email">Email</label>
+                <input type="text" placeholder="Enter email" name="email" id="email" required>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter password" name="password" id="password" required>
+                <div class="buttons">
+                <div class="action-btn">
+                    <button class="submit-btn" type="button">Forgot password</button>
+                    <button class="submit-btn" type="submit" id="submit">Login</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <a href="/pages/signup.html">Don't have an account? Click this</a>
+    </footer>
+</body>
+
+</html>

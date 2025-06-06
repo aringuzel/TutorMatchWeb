@@ -1,0 +1,292 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar */
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Container for centered items */
+.nav-center {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Align list items */
+li {
+    position: relative; /* Ensures submenu is positioned correctly */
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar links */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+/* Logo styling */
+.logo {
+    height: 200px;
+    width: auto;
+}
+
+.btn {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#picture {
+    margin-top: 30px;
+    height: auto;
+    width: 600px;
+}
+
+
+/* Slideshow */
+#reviews {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.slider {
+    width: 90%;  /* Adjust this value as needed */
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slides p {
+    min-width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    color: burlywood;
+}
+
+.slides i {
+    font-style: italic;
+}
+
+.sectioned {
+    width: 50%; /* Adjusts the length of the line */
+    margin: 20px auto; /* Centers it horizontally */
+}
+
+#box {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.content {
+    /*background-color: burlywood;*/
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px; /* Restricts width to 500px */
+    width: 100%; /* Allows it to be responsive and fill the space within max-width */
+    box-sizing: border-box;
+    background-color: burlywood;
+    box-shadow: rgb(0, 0, 0) 10px;
+}
+
+
+.dark-mode {
+    background-color: #111;
+    color: white;
+}
+
+
+/* footer */
+footer {
+    background-color: burlywood;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section img {
+    width: 50px;
+    height: 50px; 
+    margin: 10px;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+.footer-section img:hover {
+    opacity: 0.7;
+    transform: scale(1.1); 
+}
+
+/* Max width: 900px (Tablets) */
+@media (max-width: 900px) {
+    .logo {
+        height: 150px;
+    }
+
+    #picture {
+        width: 90%;
+    }
+
+    .slider {
+        max-width: 500px;
+    }
+
+    .content {
+        max-width: 90%;
+    }
+
+    .sectioned {
+        width: 70%;
+    }
+}
+
+/* Max width: 767px (Small tablets, large phones) */
+@media (max-width: 767px) {
+    .ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-center {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        height: 140px !important;
+        width: auto;
+        display: block;
+        margin: 10px auto;
+    }
+
+    li {
+        justify-content: center;
+        text-align: center;
+        margin: 5px;
+        flex: 0 1 auto;
+    }
+
+    li a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .slider {
+        max-width: 100%;
+    }
+
+    .slides p {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .sectioned {
+        width: 80%;
+    }
+
+    #box {
+        flex-direction: column;
+    }
+}
+
+/* Max width: 479px (Mobile phones) */
+@media (max-width: 479px) {
+    .logo {
+        height: 80px;
+    }
+
+    .btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #picture {
+        width: 350px;
+        height: auto;
+    }
+
+    .content {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .slides p {
+        font-size: 14px;
+    }
+
+    .footer-section h2 {
+        font-size: 1em;
+    }
+
+    .footer-section img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sectioned {
+        width: 90%;
+    }
+}

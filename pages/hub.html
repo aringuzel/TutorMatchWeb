@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Learning Hub / TutorMatch</title>
+        <link href="/css/hub.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" type="image/x-icon" href='/images/icon.png'>
+        
+    </head>
+    
+    <body>
+        <header id="top">
+            <nav id="nav">
+                <ul class="ul">
+                    
+
+                    <div class="nav-center">
+                        <li><a href="/index.html"><img src="/images/icon.png" alt="logo" class="logo"></a></li>
+                    </div>
+                </ul>
+                <ul class="ul">
+                    <div class="nav-center">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/pages/courses.html">Courses</a></li>
+                        <li><a href="/pages/tutor.html">Tutors</a></li>
+                        <li><a href="/pages/about.html">About</a></li>
+                        <li><a href="/pages/hub.html"><strong>Learning Hub</strong></a></li>
+                        <li><a href="/pages/contact.html">Contact Us</a></li>
+                        <button class="btn" id="logout-btn">Logout</button>
+                        <button class="btn" id="login-btn">Login</button>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+                
+        <main>
+            <div id="user-name-container">
+                <h2 id="full-name">Loading...</h2>
+                <p id="context">Loading...</p>
+            </div>
+
+            <br>
+            
+            <div class="center-container">
+                <button class="btn" id="Darkmode-HTML">Dark mode</button>
+            </div>
+
+            <br>
+            <section id="courses">
+                <p id="course">Loading...</p>
+            </section>
+
+            <section id="students">
+            </section>
+
+            <!-- Feedback Section -->
+            <div id="feedback-section">
+                <h3>Provide Feedback</h3>
+                <input type="text" id="student-id" placeholder="Enter Student UID" />
+                <button id="load-courses-btn">Load Courses</button>
+                <div id="student-courses"></div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="footer-section social-media">
+                <h2>Find Us</h2>
+                <a href="https://facebook.com/" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+                <a href="https://x.com/" target="_blank"><img src="/images/twitter.png" alt="Twitter"></a>
+                <a href="https://instagram.com/" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+            </div>
+        
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: support@TutorMatch.com</p>
+                <p>Phone: 0208 456 1234</p>
+            </div>
+        
+            <p><strong>&copy; 2025 TutorMatch. All Rights Reserved.</strong></p>
+        </footer>
+        <script type="module" src="/js/hub.js"></script>
+    </body>
+
+</html>
