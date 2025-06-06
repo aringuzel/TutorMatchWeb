@@ -5,12 +5,6 @@ import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "htt
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAYECrfhI2bm0esgSGAJkUlvhCHBZmYEXo",
-    authDomain: "tutormatch-7e043.firebaseapp.com",
-    projectId: "tutormatch-7e043",
-    storageBucket: "tutormatch-7e043.firebasestorage.app",
-    messagingSenderId: "694680606532",
-    appId: "1:694680606532:web:1a1e782be899c55da76911"
 };
   
 // Initialize Firebase
